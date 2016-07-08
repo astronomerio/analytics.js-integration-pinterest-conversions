@@ -12,7 +12,7 @@ The name of the conversion tracking tag you created in your Pinterest Business A
 The tracking ID can be extracted from the `<img>` tag created by Pinterest.  Copy everything shown after the `tid=` until the next `&`.  In the example below, the tracking ID is `FGhuRS2YHwm`.  
 ```html
 <img height="1" width="1" style="display:none;" alt="" src="https://ct.pinterest.com/?tid=FGhuRS2YHwm&value=0.00&quantity=1"/>
-
+```
 ##License
 
 Released under the [MIT license](License.md).
