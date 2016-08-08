@@ -13,6 +13,8 @@ The tracking ID can be extracted from the `<img>` tag created by Pinterest.  Cop
 ```html
 <img height="1" width="1" style="display:none;" alt="" src="https://ct.pinterest.com/?tid=FGhuRS2YHwm&value=0.00&quantity=1"/>
 ```
+###Toggle the Pinterest Conversion Tracking integration on.  You should see events being tracked in your Pinterest dashboard as they are triggered!
+
 ##License
 
 Released under the [MIT license](License.md).
