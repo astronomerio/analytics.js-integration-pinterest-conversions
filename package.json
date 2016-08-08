@@ -1,5 +1,5 @@
 {
-  "name": "@astronomerio/analytics.js-integration-pinterest-conversions",
+  "name": "astronomerio/analytics.js-integration-pinterest-conversions",
   "description": "The Pinterest Conversion Tracking Analytics.js integration.",
   "version": "1.0.0",
   "keywords": [
