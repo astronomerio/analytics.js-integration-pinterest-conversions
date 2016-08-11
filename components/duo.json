@@ -1,0 +1,10 @@
+{
+  "test/index.test.js": {
+    "id": "test/index.test.js",
+    "type": "js",
+    "mtime": 1470941131000,
+    "src": "// 'use strict';\n\n// var Analytics = require('analytics.js-core').constructor;\n// var integration = require('analytics.js-integration');\n// var sandbox = require('clear-env');\n// var tester = require('analytics.js-integration-tester');\n// var Kenshoo = require('../lib');\n\n//Commented out testing that existed in Taboola.  Was likely tested in prod?",
+    "deps": {},
+    "entry": true
+  }
+}
