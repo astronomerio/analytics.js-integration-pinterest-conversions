@@ -1,5 +1,5 @@
 {
-  "name": "analytics.js-integration-pinterest",
+  "name": "@astronomerio/analytics.js-integration-pinterest-conversions",
   "description": "The Pinterest Conversions Tracker analytics.js integration.",
   "author": "beckysteele",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "npm": ">=2.7.0"
   },
   "repository": {
-    "url": "",
+    "url": "https://github.com/astronomerio/analytics.js-integration-pinterest-conversions.git",
     "type": "git"
   },
   "bugs": {
