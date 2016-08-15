@@ -1,9 +1,8 @@
-'use strict';
 
-var Analytics = require('@segment/analytics.js-core').constructor;
-var integration = require('@segment/analytics.js-integration');
-var sandbox = require('@segment/clear-env');
-var tester = require('@segment/analytics.js-integration-tester');
+var Analytics = require('analytics.js-core').constructor;
+var integration = require('analytics.js-integration');
+var sandbox = require('clear-env');
+var tester = require('analytics.js-integration-tester');
 var Pinterest = require('../lib/');
 
 describe('Pinterest', function() {
@@ -11,10 +10,10 @@ describe('Pinterest', function() {
   var pinterest;
   var options = {
     events: {
-      pageViewsTag: '6ZYzll7CrXN',
-      signupsTag: 'SkltST0UIzk',
-      bidsTag: 't3L8p332Jna',
-      checkoutTag: 'eL19bCht8WC'
+        signup: 'SkltST0UIzk',
+        bids: 't3L8p332Jna',
+        checkouts: 'eL19bCht8WC',
+        pageVisits: '6ZYzll7CrXN'
     }
   };
 
@@ -46,12 +45,6 @@ describe('Pinterest', function() {
       analytics.page();
     });
 
-    describe('#page', function() {
-      beforeEach(function() {
-        analytics.spy(pinterest, 'load');
-      });
-    });
-
     describe('#track', function() {
       beforeEach(function() {
         analytics.spy(pinterest, 'load');
@@ -60,6 +53,11 @@ describe('Pinterest', function() {
       it('should not send if event is not defined', function() {
         analytics.track('toString');
         analytics.didNotCall(pinterest.load);
+      });
+
+      it('should send correctly', function() {
+        analytics.track('signup');
+        analytics.loaded('<img height="1" width="1" style="display:none;" alt="" src="https://ct.pinterest.com/?tid=SkltST0UIzk&value=0.00&quantity=1"/>');
       });
     });
   });

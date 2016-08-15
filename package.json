@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "astronomerio/analytics.js-integration-pinterest-conversions",
   "description": "The Pinterest Conversion Tracking Analytics.js integration.",
   "version": "1.0.0",
@@ -10,44 +11,31 @@
     "pinterest"
   ],
   "main": "lib/index.js",
+  "version": "1.0.0",
   "scripts": {
     "test": "make test"
   },
+  "engines": {
+    "node": ">=0.12.0",
+    "npm": ">=2.7.0"
+  },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/astronomerio/pinterest-conversions.git"
+    "url": "https://github.com/astronomerio/analytics.js-integration-pinterest-conversions.git",
+    "type": "git"
   },
-  "author": "beckysteele",
-  "license": "SEE LICENSE IN LICENSE",
   "bugs": {
-    "url": "https://github.com/astronomerio/analytics.js-integration-pinterest-conversions/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/astronomerio/analytics.js-integration-pinterest-conversions/issues#readme",
+  "homepage": "",
   "dependencies": {
   },
   "devDependencies": {
-    "@segment/analytics.js-core": "^3.0.0",
-    "@segment/analytics.js-integration-tester": "^2.0.0",
-    "@segment/clear-env": "^2.0.0",
-    "@segment/eslint-config": "^3.1.1",
-    "browserify": "^13.0.0",
-    "browserify-istanbul": "^2.0.0",
-    "eslint": "^2.9.0",
-    "eslint-plugin-mocha": "^2.2.0",
-    "eslint-plugin-require-path-exists": "^1.1.5",
-    "istanbul": "^0.4.3",
-    "karma": "^1.1.0",
-    "karma-browserify": "^5.0.4",
-    "karma-chrome-launcher": "^1.0.1",
-    "karma-coverage": "^1.0.0",
-    "karma-junit-reporter": "^1.0.0",
-    "karma-mocha": "^1.0.1",
-    "karma-phantomjs-launcher": "^1.0.0",
-    "karma-sauce-launcher": "^1.0.0",
-    "karma-spec-reporter": "0.0.26",
+    "duo": "0.12.x",
+    "duo-test": "0.2.x",
+    "eslint": "0.x",
+    "eslint-config-segment": "^1.0.10",
     "mocha": "^2.2.5",
-    "npm-check": "^5.2.1",
-    "phantomjs-prebuilt": "^2.1.7",
-    "watchify": "^3.7.0"
+    "mocha-phantomjs": "segmentio/mocha-phantomjs#master",
+    "phantomjs": "^1.9.17"
   }
 }
