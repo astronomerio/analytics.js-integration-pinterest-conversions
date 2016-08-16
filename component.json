@@ -7,7 +7,7 @@
   "main": "lib/index.js",
   "dependencies": {
     "component/each": "0.0.1",
-    "ndhoule/defaults": "2.0.1",
+    "object-defaults": "0.1.0",
     "segmentio/analytics.js-integration": "^1.0.0"
   },
   "development": {
