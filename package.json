@@ -1,15 +1,8 @@
 {
-<<<<<<< HEAD
-  "name": "astronomerio/analytics.js-integration-pinterest-conversions",
+  "name": "analytics.js-integration-pinterest-conversions",
   "description": "The Pinterest Conversion Tracking Analytics.js integration.",
-  "version": "1.0.0",
-  "keywords": [
-    "analytics.js",
-    "analytics.js-integration",
-    "segment",
-    "astronomer.io",
-    "pinterest"
-  ],
+  "author": "becky@astronomer.io",
+  "license": "MIT",
   "main": "lib/index.js",
   "version": "1.0.0",
   "scripts": {
