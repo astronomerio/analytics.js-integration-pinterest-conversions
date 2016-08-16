@@ -12,6 +12,6 @@
   "development": {
     "segmentio/analytics.js-core": "^2.10.0",
     "segmentio/clear-env": "0.2.x",
-    "segmentio/analytics.js-integration-tester": "1.4.x"
+    "segmentio/analytics.js-integration-tester": "1.5.4"
   }
 }
