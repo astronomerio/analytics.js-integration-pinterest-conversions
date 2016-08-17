@@ -34,7 +34,7 @@ describe('Pinterest', function() {
 
   it('should have the correct settings', function() {
     analytics.compare(Pinterest, integration('Pinterest')
-      .tag('<img height="1" width="1" style="display:none;" alt="" src="https://ct.pinterest.com/?tid={{ tid }}&value=0.00&quantity=1"/>')
+      .assumesPageview()
       .mapping('events'));
   });
 
@@ -51,10 +51,9 @@ describe('Pinterest', function() {
       });
 
       it('should have one image tag', function() {
-        analytics.track('signup');
-        var images = document.querySelectorAll('img');
-        analytics.equal(images.length, 1);
-        console.log(images);
+          analytics.track('signup');
+          var images = document.querySelectorAll('img');
+          analytics.equal(images.length, 1);
       });
 
       // it('should not send if event is not defined', function() {
