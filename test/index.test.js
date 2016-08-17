@@ -55,16 +55,6 @@ describe('Pinterest', function() {
           var images = document.querySelectorAll('img');
           analytics.equal(images.length, 1);
       });
-
-      // it('should not send if event is not defined', function() {
-      //   analytics.track('toString');
-      //   analytics.didNotCall(pinterest.load);
-      // });
-
-      // it('should send correctly', function() {
-      //   analytics.track('signup');
-      //   analytics.loaded('<img height="1" width="1" style="display:none;" alt="" src="https://ct.pinterest.com/?tid=SkltST0UIzk&value=0.00&quantity=1"/>');
-      // });
     });
   });
 });
