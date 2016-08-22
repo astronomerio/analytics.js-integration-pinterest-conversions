@@ -50,12 +50,6 @@ describe('Pinterest', function() {
       beforeEach(function() {
         analytics.spy(pinterest, 'load');
       });
-
-      // it('should have one image tag', function() {
-      //     analytics.track('signup');
-      //     var images = document.querySelectorAll('img');
-      //     analytics.equal(images.length, 1);
-      // });
     });
   });
 });
