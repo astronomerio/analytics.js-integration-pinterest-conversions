@@ -9,10 +9,10 @@ describe('Pinterest', function() {
   var pinterest;
   var options = {
     events: {
-        signup: 'BZ7FQQpqexJ',
-        bids: '22345678',
-        checkouts: '32345678',
-        pageVisits: '42345678'
+      signup: 'BZ7FQQpqexJ',
+      bids: '22345678',
+      checkouts: '32345678',
+      pageVisits: '42345678'
     }
   };
 
@@ -33,21 +33,36 @@ describe('Pinterest', function() {
 
   it('should have the correct settings', function() {
     analytics.compare(Pinterest, integration('Pinterest')
-      .assumesPageview()
-      .tag('pixel', '<img src="//ct.pinterest.com/?tid={{ pixel }}&value=0.00&quantity=1"/>')
-      .option('events'));
+                      .global('pintrk')
+                      .option('tagId', '')
+                      .tag('pixel', '<img src="//ct.pinterest.com/?tid={{ pixel }}&value=0.00&quantity=1"/>')
+                      .option('events'));
+  });
+
+  it('should load', function (done) {
+    analytics.load(pinterest, done);
   });
 
   describe('after loading', function() {
     beforeEach(function(done) {
       analytics.once('ready', done);
       analytics.initialize();
-      analytics.page();
     });
 
-    describe('#track', function() {
-      beforeEach(function() {
-        analytics.spy(pinterest, 'load');
+    describe('#page', function () {
+      beforeEach(function () {
+        analytics.stub(window.pintrk.queue, 'push');
+      });
+
+      it('should call page', function () {
+        analytics.page();
+        analytics.called(window.pintrk.queue.push);
+      });
+    });
+
+    describe('#track', function () {
+      it('should call track', function () {
+        analytics.track('Product List Viewed');
       });
     });
   });
