@@ -47,22 +47,25 @@ describe('Pinterest', function() {
     beforeEach(function(done) {
       analytics.once('ready', done);
       analytics.initialize();
+      analytics.stub(window, 'pintrk');
     });
 
     describe('#page', function () {
-      beforeEach(function () {
-        analytics.stub(window.pintrk.queue, 'push');
-      });
-
       it('should call page', function () {
         analytics.page();
-        analytics.called(window.pintrk.queue.push);
+        analytics.called(window.pintrk);
       });
     });
 
-    describe('#track', function () {
-      it('should call track', function () {
-        analytics.track('Product List Viewed');
+    describe('#productListViewed', function () {
+      it('should call method with right values', function () {
+        analytics.track('Product List Viewed', {
+          category: 'Boots'
+        });
+        analytics.called(window.pintrk, 
+                         'viewcategory', { 
+                           property: 'Boots' 
+                         });
       });
     });
   });
