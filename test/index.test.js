@@ -68,5 +68,34 @@ describe('Pinterest', function() {
                          });
       });
     });
+
+    describe('#productAdded', function () {
+      it('should call method with right values', function () {
+        analytics.track('Product Added', {
+          product_id: '507f1f77bcf86cd799439011',
+          category: 'Games',
+          name: 'Monopoly: 3rd Edition',
+          brand: 'Hasbro',
+          variant: '200 pieces',
+          price: 18.99,
+          quantity: 1
+        });
+
+        analytics.called(window.pintrk, 'addtocart', {
+          value: 18.99,
+          order_quantity: 1,
+          currency: 'USD',
+          line_items: [{
+            product_name: 'Monopoly: 3rd Edition',
+            product_id: '507f1f77bcf86cd799439011',
+            product_category: 'Games',
+            product_variant_id: '200 pieces',
+            product_price: 18.99,
+            product_quantity: 1,
+            product_brand: 'Hasbro',
+          }]
+        });
+      });
+    });
   });
 });
