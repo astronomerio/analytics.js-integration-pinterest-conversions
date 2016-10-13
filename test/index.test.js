@@ -97,5 +97,39 @@ describe('Pinterest', function() {
         });
       });
     });
+
+    describe('#orderCompleted', function () {
+      it('should call method with the right values', function () {
+        analytics.track('Completed Order', {
+          orderId: '50314b8e9bcf000000000000',
+          total: 30,
+          revenue: 25,
+          currency: 'USD',
+          products: [{
+              id: '507f1f77bcf86cd799439011',
+              sku: '45790-32',
+              name: 'Monopoly: 3rd Edition',
+              price: 19,
+              quantity: 1,
+              category: 'Games'
+            }, {
+              id: '505bd76785ebb509fc183733',
+              sku: '46493-32',
+              name: 'Uno Card Game',
+              price: 3,
+              quantity: 2,
+              category: 'Games'
+            }]
+        });
+
+        analytics.called(window.pintrk, 'checkout', {
+          value: 18.99,
+          currency: 'USD',
+          line_items: [
+
+          ]
+        });
+      });
+    });
   });
 });
