@@ -98,7 +98,7 @@ describe('Pinterest', function() {
         describe('#orderCompleted', function () {
             it('should call method with the right values', function () {
                 analytics.track('Order Completed', {
-                   // order_id: '50314b8e9bcf000000000000',
+                    order_id: '50314b8e9bcf000000000000',
                     total: 30,
                     revenue: 25,
                     currency: 'USD',
@@ -112,7 +112,7 @@ describe('Pinterest', function() {
                 });
 
                 analytics.called(window.pintrk, 'checkout', {
-                  //  order_id: '50314b8e9bcf000000000000',
+                    order_id: '50314b8e9bcf000000000000',
                     order_quantity: 30,
                     value: 25,
                     currency: 'USD',
@@ -123,8 +123,6 @@ describe('Pinterest', function() {
                         product_quantity: 1,
                         product_category: 'Games'
                     }]
-
-
                 });
             });
         });
