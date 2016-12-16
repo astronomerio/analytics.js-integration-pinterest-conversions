@@ -1,17 +1,16 @@
-"use strict";
+'use strict';
 
 var Analytics = require('@astronomerio/analytics.js-core').constructor;
 var integration = require('@astronomerio/analytics.js-integration');
 var sandbox = require('@segment/clear-env');
 var tester = require('@segment/analytics.js-integration-tester');
 var Pinterest = require('../lib/index');
-
 describe('Pinterest', function() {
   var analytics;
   var pinterest;
   var options = {
-    tagId: "2617283085816",
-    reservedMappings: [{key: 'bid_on_item', value: 'checkout'}]
+    tagId: '2617283085816',
+    reservedMappings: [ { key: 'bid_on_item', value: 'checkout' } ]
   };
 
   beforeEach(function() {
