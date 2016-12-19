@@ -20,7 +20,8 @@ describe('Pinterest', function() {
     { key: 'view_category', value: 'view_category' },
     { key: 'checkout', value: 'checkout' },
     { key: 'No Value', value: 'test' },
-    { key: 'add_to_cart', value: 'add_to_cart' }
+    { key: 'add_to_cart', value: 'add_to_cart' },
+    { key: 'custom', value: 'custom' }
     ]
   };
 
@@ -75,6 +76,7 @@ describe('Pinterest', function() {
           });
         });
       }); 
+
       describe('signup', function() {
         it('should call track with sign up', function() {
           analytics.track('sign_up',{ 
@@ -93,7 +95,24 @@ describe('Pinterest', function() {
               });
         });
       });
-
+      describe('custom', function() {
+        it('should call track with custom', function() {
+          analytics.track('custom',{ 
+            accountType: 'lead'
+          });
+          analytics.called(window.pintrk, 'track',
+              'custom', {
+                value: '',
+                order_quantity: 1,
+                currency: 'USD',
+                property: '',
+                order_id: '',
+                promo_code: '',
+                lead_type: 'lead',
+                line_items: []
+              });
+        });
+      });
       describe('lead', function() {
         it('should call track with lead', function() {
           analytics.track('lead',{ 
