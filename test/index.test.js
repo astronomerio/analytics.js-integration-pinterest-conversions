@@ -38,7 +38,9 @@ describe('Pinterest', function() {
     analytics.reset();
     pinterest.reset();
     sandbox();
-  });     it('should have the correct settings', function() {
+  });     
+
+  it('should have the correct settings', function() {
     analytics.compare(Pinterest, integration('Pinterest')
         .global('pintrk')
         .option('tagId', '')
@@ -69,6 +71,7 @@ describe('Pinterest', function() {
           analytics.track('this key is not mapped');
         });
       });
+
       describe('unmatch track call', function() {
         it('should call track with an event thats not mapped ', function() {
           analytics.track('No Value',{ 
@@ -95,6 +98,7 @@ describe('Pinterest', function() {
               });
         });
       });
+
       describe('custom', function() {
         it('should call track with custom', function() {
           analytics.track('custom',{ 
@@ -113,6 +117,7 @@ describe('Pinterest', function() {
               });
         });
       });
+
       describe('lead', function() {
         it('should call track with lead', function() {
           analytics.track('lead',{ 
@@ -225,7 +230,6 @@ describe('Pinterest', function() {
               category: 'Games'
             }]
           });
-
           analytics.called(window.pintrk, 'track', 'checkout', {
             order_id: '50314b8e9bcf000000000000',
             order_quantity: 30,
@@ -322,7 +326,6 @@ describe('Pinterest', function() {
           price: 18.99,
           quantity: 1
         });
-
         analytics.called(window.pintrk, 'track', 'addtocart', {
           value: 18.99,
           order_quantity: 1,
@@ -355,7 +358,6 @@ describe('Pinterest', function() {
             category: 'Games'
           }]
         });
-
         analytics.called(window.pintrk, 'track', 'checkout', {
           order_id: '50314b8e9bcf000000000000',
           order_quantity: 30,
@@ -371,12 +373,15 @@ describe('Pinterest', function() {
         });
       });
     });
+
+    /* Comparing product added with no values and order completed with no values to analytics.called() results in an unkown error. It states the values called with the stubs are different but are shown to be the same. */
     describe('#product added with no values', function() {
       it('should call product added  method with nothing', function() {
         analytics.track('Product Added');
       });
     });
-    describe('#with no values', function() {
+
+    describe('#ordered completed with no values', function() {
       it('should call method with nothing', function() {
         analytics.track('Order Completed');
       });
