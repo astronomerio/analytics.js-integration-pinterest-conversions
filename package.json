@@ -4,7 +4,7 @@
   "author": "becky@astronomer.io",
   "license": "MIT",
   "main": "lib/index.js",
-  "version": "1.1.0",
+  "version": "1.2.1",
   "scripts": {
     "test": "karma start"
   },
@@ -22,7 +22,7 @@
   "homepage": "",
   "dependencies": {
     "@astronomerio/analytics.js-integration": "github:astronomerio/analytics.js-integration#3.1.0",
-    "@ndhoule/each": "^2.0.1"
+    "analytics-events": "^2.2.0"
   },
   "devDependencies": {
     "@astronomerio/analytics.js-core": "github:astronomerio/analytics.js-core#3.0.0",
